@@ -255,6 +255,27 @@ td:has(code), td.num { font-family: var(--mono); font-variant-numeric: tabular-n
   margin: 1.2rem 0 2.2rem;
 }
 
+.moodboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0 2rem;
+}
+.moodboard-item {
+  border: 1px solid var(--brown-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.moodboard-item img { display: block; width: 100%; height: 190px; object-fit: cover; }
+.moodboard-item .cap {
+  padding: 0.7rem 0.85rem;
+  font-size: 0.8rem;
+  color: var(--fog-dim);
+}
+.moodboard-item .cap strong { color: #fff; display: block; font-size: 0.82rem; margin-bottom: 0.15rem; }
+.moodboard-item .cap a { font-size: 0.72rem; }
+
 .swatches { display: flex; flex-wrap: wrap; gap: 1.1rem; margin: 1.6rem 0 2.2rem; }
 .swatch { width: 140px; }
 .swatch .chip { height: 68px; border-radius: 6px; margin-bottom: 0.5rem; border: 1px solid rgba(255,255,255,0.14); }
@@ -289,7 +310,17 @@ pre.tree {
 
 .status-due { color: var(--amber); font-weight: 600; font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.02em; }
 
-.ref-list p { margin: 0 0 1.2em; padding-left: 1.7em; text-indent: -1.7em; font-size: 0.93rem; max-width: none; }
+.ref-list p { margin: 0 0 0.3em; padding-left: 1.7em; text-indent: -1.7em; font-size: 0.93rem; max-width: none; }
+.ref-list p.ref-note {
+  padding-left: 1.7em;
+  text-indent: 0;
+  margin: 0 0 1.4em;
+  font-size: 0.86rem;
+  color: var(--fog-dim);
+  border-left: 2px solid var(--teal-dim);
+  padding-left: 1rem;
+  margin-left: 1.7em;
+}
 
 footer.site-footer {
   text-align: center;
