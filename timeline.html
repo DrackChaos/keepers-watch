@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Management &amp; Timeline — Keeper's Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,460;9..144,560;9..144,650&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="brand" href="index.html">Keeper's Watch</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inquiry.html">Folio Inquiry</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="moodboard.html">Moodboard</a></li>
+      <li><a href="asset-plan.html">Asset Plan</a></li>
+      <li><a class="current" href="timeline.html">Asset Management &amp; Timeline</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+    </ul>
+  </nav>
+  <div class="beam-rule"></div>
+</header>
+
+<section class="photo-hero page" style="background-image:url('https://images.unsplash.com/photo-1778701151677-d01a0a862a83?w=2200&q=80&fm=jpg&fit=crop');">
+  <div class="inner"><h1>Asset Management &amp; Timeline</h1></div>
+  <p class="photo-credit">Photo: Fabian S / <a href="https://unsplash.com/photos/a-foggy-day-at-the-beach-with-a-lighthouse-on-a-hill-in-the-distance-ZyS9UROhrjE" target="_blank" rel="noopener">Unsplash</a></p>
+</section>
+
+<main class="wrap">
+  <h2 style="margin-top:2.4rem;">Asset Management System</h2>
+  <p>Local folder structure, set up to trace directly back to the rows in the Asset Plan tables so a marker can find any asset without needing an explanation.</p>
+
+  <pre class="tree">KeepersWatch_Folio/
+├── 01_Reference/          (moodboard exports, research PDFs, citations)
+├── 02_3D/
+│   ├── LighthouseLamp/    (source .blend, exported .fbx, textures/)
+│   ├── Rowboat/
+│   ├── LobsterTrap/
+│   ├── PierPost/
+│   └── SeagullNest/
+├── 03_Audio/
+│   ├── Raw/               (unedited source recordings/downloads)
+│   └── Final/             (edited, folio-ready .wav files)
+├── 04_Documentation/       (asset list .xlsx, timeline .xlsx, working doc)
+└── 05_Exports/             (final render screenshots, Sketchfab export bundles)</pre>
+
+  <p><strong>Naming convention:</strong> <code>AssetType_AssetName_Version</code> — e.g. <code>3D_LighthouseLamp_v2.blend</code>, <code>AUD_Foghorn_Ambient_Final.wav</code>. No generic names ("new folder," "stuff," "test"). Every folder/file name traces directly back to a row in the Asset Plan tables.</p>
+
+  <div class="placeholder">
+    Screenshot of the actual local folder (top-level view) goes here once it's set up on my machine.
+  </div>
+
+  <h2>Timeline</h2>
+  <table>
+    <tr><th>Week</th><th>Phase</th><th>Planned tasks &amp; targets</th><th>Status</th></tr>
+    <tr><td>Week 3 (now)</td><td>Conceptualisation</td><td>Lock theme + concept, build visual + sonic moodboard, draft asset list</td><td>In progress</td></tr>
+    <tr><td>Week 4 (Fri 31 Jul)</td><td class="status-due">Progressive Folio 1 due</td><td>Submit documentation, references, moodboards, asset plan, asset mgmt, timeline, reflection</td><td class="status-due">Due</td></tr>
+    <tr><td>Week 5</td><td>Technical planning → Execution</td><td>Set up Blender project files per folder structure; begin Lighthouse Lamp Housing (hero asset)</td><td>Planned</td></tr>
+    <tr><td>Week 6</td><td>Execution</td><td>Finish Lighthouse Lamp Housing (textured); begin Rowboat modelling</td><td>Planned</td></tr>
+    <tr><td>Week 7 (Fri 28 Aug)</td><td class="status-due">Progressive Folio 2 due</td><td>Minimum 2 completed/textured 3D assets, updated asset mgmt + timeline, reflection</td><td class="status-due">Due</td></tr>
+    <tr><td>Week 8–9</td><td>Execution</td><td>Model Lobster Trap + Pier Post; begin recording/sourcing raw audio</td><td>Planned</td></tr>
+    <tr><td>Week 10</td><td>Execution</td><td>Finish Seagull Nest (stretch asset); edit all 10 audio assets; integrate scene in Sketchfab/engine</td><td>Planned</td></tr>
+    <tr><td>Week 11 (Thu 24 Sep)</td><td class="status-due">Final Folio due</td><td>All 4+ models, 10 audio assets, full eFolio polish, freeze + submit PDF</td><td class="status-due">Due</td></tr>
+  </table>
+
+  <h3>Risk &amp; Plan B</h3>
+  <p>I haven't used Blender before this unit, so the biggest risk is the Lighthouse Lamp Housing (the hero, most complex asset) taking longer than the Week 5–6 window allows while I'm still learning box modelling basics. Plan B is already built into the asset list — the Lobster Trap and Pier Post are scoped to lean on texture detail rather than modelled geometry, so if the Lamp Housing overruns, time can be pulled from those simpler props without cutting an asset entirely.</p>
+</main>
+
+<footer class="site-footer">
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 1
+</footer>
+</body>
+</html>

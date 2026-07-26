@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Plan — Keeper's Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,460;9..144,560;9..144,650&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="brand" href="index.html">Keeper's Watch</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inquiry.html">Folio Inquiry</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="moodboard.html">Moodboard</a></li>
+      <li><a class="current" href="asset-plan.html">Asset Plan</a></li>
+      <li><a href="timeline.html">Asset Management &amp; Timeline</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+    </ul>
+  </nav>
+  <div class="beam-rule"></div>
+</header>
+
+<section class="photo-hero page" style="background-image:url('https://images.unsplash.com/photo-1767730794811-cdeb9c786f22?w=2200&q=80&fm=jpg&fit=crop');">
+  <div class="inner"><h1>Asset Plan</h1></div>
+  <p class="photo-credit">Photo: paws and prints / <a href="https://unsplash.com/photos/waves-crashing-against-weathered-posts-on-a-beach-9SLoQWoGScs" target="_blank" rel="noopener">Unsplash</a></p>
+</section>
+
+<main class="wrap">
+  <p style="margin-top:2.4rem;">Progressive Folio 1 only requires <strong>descriptions</strong> of planned assets, not finished models or audio. Budgets below are set against the Quest 3/3S "Medium Simulation" performance band (400–600 draw calls, 1.3–1.8M triangles scene-wide — Meta, n.d.; the same chipset budget applies to the 3S per Road to VR, 2024), so per-object polycounts are kept modest deliberately.</p>
+
+  <h2>Planned Visual (3D) Assets</h2>
+  <table>
+    <tr><th>Asset name</th><th>Category</th><th>Description</th><th>Target poly count</th><th>Texture size</th></tr>
+    <tr>
+      <td>Lighthouse Lamp Housing</td><td>Hero prop</td>
+      <td>The rotating lamp mechanism at the top of the tower — the focal object of the scene.</td>
+      <td>~4,000 tris</td><td>2K (diffuse + emissive for the beam)</td>
+    </tr>
+    <tr>
+      <td>Weathered Rowboat</td><td>Environment prop</td>
+      <td>Beached, half-sunk wooden rowboat on the rocks below the cliff.</td>
+      <td>~1,800 tris</td><td>1K</td>
+    </tr>
+    <tr>
+      <td>Lobster Trap</td><td>Detail prop</td>
+      <td>Timber-and-rope trap left on the pier, hand interaction target. Simplified from the original plan — rope weave and wood weathering are baked into the texture rather than modelled as geometry, since this is a background prop, not the hero asset.</td>
+      <td>~900 tris</td><td>512×512</td>
+    </tr>
+    <tr>
+      <td>Pier Post</td><td>Structural prop</td>
+      <td>Repeating weathered timber post used to dress the pier walkway. Same simplification — weathering/damage detail comes from texture, not modelled variation per post.</td>
+      <td>~400 tris</td><td>512×512</td>
+    </tr>
+    <tr>
+      <td>Seagull Nest <em>(stretch, 5th asset)</em></td><td>Detail prop</td>
+      <td>Small nest on a cliff ledge, adds life/scale to the environment.</td>
+      <td>~600 tris</td><td>512×512</td>
+    </tr>
+  </table>
+  <p style="font-size:0.88rem;color:rgba(217,217,217,0.7)">The rubric only requires a minimum of 4 assets for the Final Folio — 5 gives buffer if one proves too ambitious, in line with the scoping decision described on the Reflection page.</p>
+
+  <h2>Planned Audio Assets</h2>
+  <p style="font-size:0.88rem;color:rgba(217,217,217,0.7)">Minimum 10 required by the Final Folio.</p>
+  <table>
+    <tr><th>#</th><th>Asset name</th><th>Category</th><th>Description</th><th>Target format</th></tr>
+    <tr><td>1</td><td>Foghorn_Ambient</td><td>Ambient</td><td>Distant recurring foghorn, looped</td><td>.wav, 44.1kHz/16-bit, stereo</td></tr>
+    <tr><td>2</td><td>Ocean_Waves_Loop</td><td>Ambient</td><td>Waves against rocks, looped bed layer</td><td>.wav, 44.1kHz/16-bit, stereo</td></tr>
+    <tr><td>3</td><td>Wind_Cliffside_Loop</td><td>Ambient</td><td>Wind gusts across the cliff top</td><td>.wav, 44.1kHz/16-bit, stereo</td></tr>
+    <tr><td>4</td><td>Seagull_Call_01/02</td><td>Foley</td><td>Two seagull call variations, non-looped one-shots</td><td>.wav, 44.1kHz/16-bit, mono</td></tr>
+    <tr><td>5</td><td>Pier_Wood_Creak</td><td>Foley</td><td>Timber creak, triggered near the pier posts</td><td>.wav, 44.1kHz/16-bit, mono</td></tr>
+    <tr><td>6</td><td>Lamp_Mechanism_Turn</td><td>Foley</td><td>Mechanical rotation sound for the lamp interaction</td><td>.wav, 44.1kHz/16-bit, mono</td></tr>
+    <tr><td>7</td><td>Footsteps_Gravel</td><td>Foley</td><td>Player footstep set on the cliff path</td><td>.wav, 44.1kHz/16-bit, mono</td></tr>
+    <tr><td>8</td><td>Rope_Creak_Rowboat</td><td>Foley</td><td>Rope/hull creak near the beached rowboat</td><td>.wav, 44.1kHz/16-bit, mono</td></tr>
+    <tr><td>9</td><td>Distant_Bell_Buoy</td><td>Ambient/tonal</td><td>Faint bell buoy far offshore, ties the scene together sonically</td><td>.wav, 44.1kHz/16-bit, stereo</td></tr>
+    <tr><td>10</td><td>Ambient_Drone_LampRoom</td><td>Tonal/musical</td><td>Sparse ambient drone inside the lamp room</td><td>.wav, 44.1kHz/16-bit, stereo</td></tr>
+  </table>
+</main>
+
+<footer class="site-footer">
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 1
+</footer>
+</body>
+</html>
