@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Assets — Keeper's Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,460;9..144,560;9..144,650&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="brand" href="index.html">Keeper's Watch</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inquiry.html">Folio Inquiry</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="moodboard.html">Moodboard</a></li>
+      <li><a href="asset-plan.html">Asset Plan</a></li>
+      <li><a class="current" href="assets.html">3D Assets</a></li>
+      <li><a href="timeline.html">Asset Management &amp; Timeline</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+    </ul>
+  </nav>
+  <div class="beam-rule"></div>
+</header>
+
+<section class="photo-hero page" style="background-image:url('https://images.unsplash.com/photo-1767730794811-cdeb9c786f22?w=2200&q=80&fm=jpg&fit=crop');">
+  <div class="inner"><h1>3D Assets — Progressive Folio 2</h1></div>
+  <p class="photo-credit">Photo: paws and prints / <a href="https://unsplash.com/photos/waves-crashing-against-weathered-posts-on-a-beach-9SLoQWoGScs" target="_blank" rel="noopener">Unsplash</a></p>
+</section>
+
+<main class="wrap">
+  <p style="margin-top:2.4rem;">Two assets are underway for this checkpoint: the <strong>Lighthouse Lamp Housing</strong> (hero asset, fully modelled and textured) and the <strong>Lobster Trap</strong> (fully modelled, texture pass still to come). Both galleries below are ordered as a build breakdown — since I only started capturing process shots after most of the geometry was already in place, these are grouped by construction stage rather than a literal undo-history timeline. Each image is captioned with what that stage shows.</p>
+
+  <h2 id="lighthouse">Lighthouse Lamp Housing</h2>
+  <p><strong>Status:</strong> Fully modelled and textured — the hero asset for this scene.</p>
+
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/lighthouse/01_railing_posts_blockout.png" alt="Ring of bare cylinder posts, gallery railing blockout">
+      <div class="cap"><strong>01 — Railing posts blockout</strong>Individual cylinder posts placed in a circle before the rail rings were added.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/02_railing_ring_complete.png" alt="Top and bottom rail rings connecting the posts">
+      <div class="cap"><strong>02 — Railing ring complete</strong>Top and bottom rings joined onto the posts to form the gallery railing. This was the hardest part of the whole model — simple in concept, but getting the proportions to actually read correctly on the deck took a lot of trial and error.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/03_deck_platform_disk.png" alt="Flat cylindrical deck platform">
+      <div class="cap"><strong>03 — Deck platform</strong>The gallery deck — a simple flat cylinder.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/04_deck_and_railing_combined.png" alt="Railing combined with the deck platform">
+      <div class="cap"><strong>04 — Deck + railing combined</strong>Railing merged onto the deck, forming the lamp gallery.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/05_steps_and_door_blockout.png" alt="Stacked box steps and a door panel">
+      <div class="cap"><strong>05 — Steps &amp; door blockout</strong>Entrance steps built from stacked boxes, plus the door panel — straightforward box modelling.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/06_window_panels_blockout.png" alt="Small box window panels">
+      <div class="cap"><strong>06 — Window panels</strong>Simple box cutouts placed down the tower shaft.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/07_tower_shaft_tapered_cylinder.png" alt="Tapered cylinder forming the tower body">
+      <div class="cap"><strong>07 — Tower shaft</strong>The main tapered-cylinder body of the tower.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/08_lamp_room_cylinder.png" alt="Wider cylinder forming the lamp room">
+      <div class="cap"><strong>08 — Lamp room</strong>The wider cylinder that sits above the gallery, under the roof.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/09_roof_cone_and_finial.png" alt="Cone roof with a ball finial on top">
+      <div class="cap"><strong>09 — Roof + finial</strong>The cone roof and finial ball, completing the top of the tower.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/10_full_assembly_angle1.png" alt="Full lighthouse tower, smoothed, angle 1">
+      <div class="cap"><strong>10 — Full assembly (angle 1)</strong>All pieces combined, subsurf smoothing applied.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/11_full_assembly_angle2.png" alt="Full lighthouse tower, smoothed, angle 2">
+      <div class="cap"><strong>11 — Full assembly (angle 2)</strong>Second angle of the smoothed tower, showing the window spacing down the shaft.</div>
+    </div>
+  </div>
+
+  <h3>Textured final renders</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/lighthouse/13_textured_final_daylight.png" alt="Lighthouse Lamp Housing, textured, daylight, full tower">
+      <div class="cap"><strong>Daylight — full tower</strong>White tower body, red roof, black railing, and wood-trimmed windows/door — the clearest view of the diffuse texture work.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/12_textured_final_night.png" alt="Lighthouse Lamp Housing, textured, night, beam lit">
+      <div class="cap"><strong>Night — beam active</strong>Emissive lamp material driving the light beam, shown against a dark sky.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lighthouse/14_textured_final_closeup_lamproom.webp" alt="Lighthouse Lamp Housing, textured, close-up of lamp room and railing">
+      <div class="cap"><strong>Close-up — lamp room</strong>Detail shot of the lamp bulb geometry, glass housing, and gallery railing.</div>
+    </div>
+  </div>
+  <div class="placeholder">SketchFab embed — link to follow once uploaded.</div>
+
+  <h2 id="lobstertrap">Lobster Trap</h2>
+  <p><strong>Status:</strong> Fully modelled, texture pass not started yet. This is a scope increase from the Folio 1 plan — I'd originally planned to bake the rope weave and wood weathering into the texture rather than modelling it, but ended up building the wire-mesh cage and woven funnel netting as real geometry instead.</p>
+
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/01_frame_slats_blockout_a.png" alt="Five loose flat frame slats">
+      <div class="cap"><strong>01 — Frame slats blockout</strong>Loose flat slats that make up the trap's timber frame.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/02_frame_slats_blockout_b.png" alt="Four flat frame slats">
+      <div class="cap"><strong>02 — Frame slats blockout</strong>More slats being sized and spaced for the frame.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/03_frame_slats_blockout_c.png" alt="Four flat frame slats, wide angle">
+      <div class="cap"><strong>03 — Frame slats blockout</strong>Same slat set from a wider angle.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/04_frame_slats_blockout_d.png" alt="Three angled frame slats">
+      <div class="cap"><strong>04 — Frame slats blockout</strong>Angled slats for the frame's slanted sections.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/05_base_lid_panel_joined.png" alt="Four slats joined into one base/lid panel">
+      <div class="cap"><strong>05 — Base/lid panel joined</strong>Slats joined edge-to-edge into a single solid panel.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/06_corner_posts_pair.png" alt="Two tall corner posts">
+      <div class="cap"><strong>06 — Corner posts</strong>The first pair of vertical corner posts.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/07_corner_posts_four.png" alt="Four tall corner posts">
+      <div class="cap"><strong>07 — Corner posts (all four)</strong>All four corner posts placed to define the trap's footprint.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/08_top_rim_frame.png" alt="Square frame made of four bars">
+      <div class="cap"><strong>08 — Top rim frame</strong>The square rim frame that ties the corner posts together at the top.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/09_wire_mesh_panel_a.png" alt="Single flat wire mesh grid panel">
+      <div class="cap"><strong>09 — Wire mesh panel</strong>A single wall panel's wire mesh grid. This — and the funnel netting below — was the hardest part of the whole model: building a mesh grid is a completely different workflow to just scaling a block up or down.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/10_wire_mesh_panel_b.png" alt="Single flat wire mesh grid panel, closer view">
+      <div class="cap"><strong>10 — Wire mesh panel</strong>Closer view of the mesh grid pattern.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/11_wire_mesh_panels_unassembled.png" alt="Four wire mesh panels laid out flat, unassembled">
+      <div class="cap"><strong>11 — Mesh panels, unassembled</strong>All four wall mesh panels laid flat before assembly.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/12_wire_mesh_walls_joined.png" alt="Two wire mesh wall panels joined at a corner">
+      <div class="cap"><strong>12 — Mesh walls joined</strong>Two mesh walls joined at a corner in 3D space.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/13_entrance_ring.png" alt="Plain ring, the entrance ring">
+      <div class="cap"><strong>13 — Entrance ring</strong>The ring that anchors the funnel entrance into the cage.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/14_funnel_netting_cone.png" alt="Woven funnel netting cone, the trap's entrance tunnel">
+      <div class="cap"><strong>14 — Funnel netting cone</strong>The woven entrance tunnel — the single most difficult piece to build on this asset.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/15_full_assembly_angle1.png" alt="Full untextured lobster trap, angle 1">
+      <div class="cap"><strong>15 — Full assembly</strong>All pieces combined — frame, mesh walls, rim, and funnel.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/16_full_assembly_front1.png" alt="Full untextured lobster trap, front view">
+      <div class="cap"><strong>16 — Full assembly, front</strong>Front view showing the mesh walls and lid slats together.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/17_full_assembly_angle2.png" alt="Full untextured lobster trap, angle 2">
+      <div class="cap"><strong>17 — Full assembly, angle 2</strong>Three-quarter view with the funnel entrance visible.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/18_full_assembly_front2.png" alt="Full untextured lobster trap, front view close">
+      <div class="cap"><strong>18 — Full assembly, front close</strong>Closer front view of the finished, untextured mesh.</div>
+    </div>
+  </div>
+
+  <div class="placeholder">Texture pass and 2D final renders — planned before the Final Folio.</div>
+  <div class="placeholder">SketchFab embed — link to follow once uploaded.</div>
+</main>
+
+<footer class="site-footer">
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 2
+</footer>
+</body>
+</html>
