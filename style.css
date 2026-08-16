@@ -310,6 +310,18 @@ pre.tree {
 
 .status-due { color: var(--amber); font-weight: 600; font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.02em; }
 
+.sketchfab-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 66%;
+  border: 1px solid var(--brown-line);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.2rem 0 0.4rem;
+  background: var(--panel);
+}
+.sketchfab-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 .ref-list p { margin: 0 0 0.3em; padding-left: 1.7em; text-indent: -1.7em; font-size: 0.93rem; max-width: none; }
 .ref-list p.ref-note {
   padding-left: 1.7em;
