@@ -36,18 +36,26 @@
   <p>My local folder structure traces straight back to the rows in the Asset Plan tables, so anyone opening it can find an asset without me walking them through it.</p>
 
   <pre class="tree">KeepersWatch_Folio/
-├── 01_Reference/          (moodboard exports, research PDFs, citations)
+├── 01_Reference/               (moodboard exports, research PDFs, citations)
 ├── 02_3D/
-│   ├── LighthouseLamp/    (source .blend, exported .fbx, textures/)
-│   ├── Rowboat/
-│   ├── LobsterTrap/
-│   ├── PierPost/
-│   └── SeagullNest/
+│   ├── LighthouseLamp/          — hero asset, DONE (modelled + textured)
+│   │   ├── LighthouseLamp.blend       (source file)
+│   │   ├── LighthouseLamp.blend1      (autosave backup)
+│   │   ├── LighthouseLamp.glb         (exported, SketchFab-ready)
+│   │   └── screenshots/               (11 dev-process shots: blockout → assembly → textured final)
+│   ├── LobsterTrap/             — DONE (modelled), texture pass pending
+│   │   ├── LobsterTrap.blend
+│   │   ├── LobsterTrap.blend1
+│   │   ├── LobsterTrap.glb
+│   │   └── screenshots/               (18 dev-process shots: frame → mesh cage → funnel → assembly)
+│   ├── Rowboat/                  — not started, planned Week 8–9
+│   ├── PierPost/                 — not started, planned Week 8–9
+│   └── SeagullNest/              — not started, stretch asset, Week 10 if time allows
 ├── 03_Audio/
-│   ├── Raw/               (unedited source recordings/downloads)
-│   └── Final/             (edited, folio-ready .wav files)
-├── 04_Documentation/       (asset list .xlsx, timeline .xlsx, working doc)
-└── 05_Exports/             (final render screenshots, Sketchfab export bundles)</pre>
+│   ├── Raw/                    (unedited source recordings/downloads — not started)
+│   └── Final/                  (edited, folio-ready .wav files — not started)
+├── 04_Documentation/            (asset list, timeline, working docs)
+└── 05_Exports/                  (final render screenshots, glTF/SketchFab bundles)</pre>
 
   <div class="moodboard-item" style="margin-top:1.2rem;">
     <img src="folder-structure.png" alt="Screenshot of the KeepersWatch_Folio directory in Windows Explorer, showing the five top-level folders" style="height:auto;">
@@ -55,6 +63,19 @@
   </div>
 
   <p><strong>Naming convention:</strong> <code>AssetType_AssetName_Version</code> — e.g. <code>3D_LighthouseLamp_v2.blend</code>, <code>AUD_Foghorn_Ambient_Final.wav</code>. No generic names ("new folder," "stuff," "test"). Every folder/file name traces directly back to a row in the Asset Plan tables.</p>
+
+  <p><strong>Why there's no separate <code>textures/</code> subfolder:</strong> both completed models use Blender's Principled BSDF nodes with flat procedural colours (no external image textures — see the material breakdown for the Lighthouse Lamp's `LH_White`, `LH_Red`, `LH_DarkMetal` etc.), so there's no UV-mapped image file to store separately; the colour data lives inside the `.blend` file itself. If a later asset (Rowboat, Pier Post) ends up needing an actual painted texture map, I'll add a `textures/` subfolder under that asset's own folder at that point, following the same naming convention.</p>
+
+  <h3>Per-Asset Production Breakdown</h3>
+  <p>Granular stage tracking per asset, since the phase-level table above doesn't show individual production steps.</p>
+  <table>
+    <tr><th>Asset</th><th>Modelled</th><th>UV / Materials</th><th>Textured</th><th>Refined &amp; finalised</th></tr>
+    <tr><td>Lighthouse Lamp Housing <em>(hero)</em></td><td class="status-due">Done — Week 6</td><td>Procedural materials assigned (no UV needed, no image textures)</td><td class="status-due">Done — Week 7</td><td>Week 8 — fix window material contrast (currently reads flat under bright lighting), polish night-beam glow</td></tr>
+    <tr><td>Lobster Trap</td><td class="status-due">Done — Week 7</td><td>Week 8 — decide procedural-colour vs. painted-image approach</td><td>Week 8</td><td>Week 9</td></tr>
+    <tr><td>Rowboat</td><td>Week 8</td><td>Week 8</td><td>Week 9</td><td>Week 9</td></tr>
+    <tr><td>Pier Post</td><td>Week 9</td><td>Week 9</td><td>Week 9</td><td>Week 9</td></tr>
+    <tr><td>Seagull Nest <em>(stretch, cut candidate)</em></td><td>Week 10, if time allows</td><td>Week 10</td><td>Week 10</td><td>Week 10</td></tr>
+  </table>
 
 
   <h2>Timeline</h2>

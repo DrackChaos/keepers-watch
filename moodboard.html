@@ -33,43 +33,55 @@
 
 <main class="wrap">
   <h2 style="margin-top:2.4rem;">Visual Moodboard</h2>
-  <p><strong>Art style:</strong> Stylised low-poly with hand-painted-look textures (flat colour + baked shading, no PBR realism). This is a deliberate choice, not just a beginner shortcut — it fits the Quest 3S triangle budget (see Asset Plan) and matches the painterly, slightly unreal tone of <em>Dear Esther</em>'s island.</p>
 
-  <h3>Colour Palette</h3>
-  <div class="swatches">
-    <div class="swatch"><div class="chip" style="background:#1B2A41"></div><div class="label">Deep Navy</div><code>#1B2A41</code></div>
-    <div class="swatch"><div class="chip" style="background:#3C6E71"></div><div class="label">Weathered Teal</div><code>#3C6E71</code></div>
-    <div class="swatch"><div class="chip" style="background:#D9D9D9"></div><div class="label">Fog Grey</div><code>#D9D9D9</code></div>
-    <div class="swatch"><div class="chip" style="background:#E8A33D"></div><div class="label">Lamp Amber</div><code>#E8A33D</code></div>
-    <div class="swatch"><div class="chip" style="background:#6B4F3B"></div><div class="label">Driftwood Brown</div><code>#6B4F3B</code></div>
-  </div>
-  <p>I used the same five colours for the site itself, so it actually feels like the place it's describing instead of just writing about it.</p>
+  <div class="board">
+    <p class="board-intro"><strong>Art style:</strong> Stylised low-poly with hand-painted-look textures (flat colour + baked shading, no PBR realism) — a deliberate choice that fits the Quest 3S triangle budget (see Asset Plan) and matches the painterly, slightly unreal tone of <em>Dear Esther</em>'s island. Everything below — the palette, the typography, and the reference photography — is one board: five colours pulled from a foggy, lamp-lit coastline, paired with a display serif for the "voice of the keeper" and a clean sans for readability, then grounded against the actual materials (glazing, rust, driftwood) those choices are meant to evoke. The same five colours run through this website itself, so the site is built <em>in</em> the palette, not just describing it.</p>
 
-  <h3>Reference Images</h3>
-  <p>Gathered for atmosphere, material, and proportion reference — not for tracing. Actual props still get modelled from scratch, per the academic integrity requirements on the Folio Inquiry page.</p>
-  <div class="moodboard-grid">
-    <div class="moodboard-item">
-      <img src="https://images.unsplash.com/photo-1723782551112-8789cd92560e?w=800&q=75&fm=jpg&fit=crop" alt="Lighthouse lantern room overlooking the sea">
-      <div class="cap"><strong>Lamp housing proportions</strong>Reference for the Lighthouse Lamp Housing's scale and glazing pattern. Photo: Katja Ano / <a href="https://unsplash.com/photos/lighthouse-lantern-room-overlooking-the-sea-BQn0qyTnOzk" target="_blank" rel="noopener">Unsplash</a></div>
+    <div class="board-collage">
+      <div class="board-tile palette-tile" style="--tilt:-1.5deg;">
+        <div class="chip-strip">
+          <div style="background:#1B2A41" title="Deep Navy #1B2A41"></div>
+          <div style="background:#3C6E71" title="Weathered Teal #3C6E71"></div>
+          <div style="background:#D9D9D9" title="Fog Grey #D9D9D9"></div>
+          <div style="background:#E8A33D" title="Lamp Amber #E8A33D"></div>
+          <div style="background:#6B4F3B" title="Driftwood Brown #6B4F3B"></div>
+        </div>
+        <div class="tag">Palette: Navy · Teal · Fog · Amber · Driftwood</div>
+      </div>
+
+      <div class="board-tile type-tile" style="--tilt:1deg;">
+        <div class="sample-display">Keeper's Watch</div>
+        <div class="sample-body">Fraunces for headings — a display serif with enough weight to feel carved, like lettering on a brass plaque.</div>
+        <div class="sample-mono">SOURCE SANS · IBM PLEX MONO</div>
+      </div>
+
+      <div class="board-tile" style="--tilt:-2deg;">
+        <img src="https://images.unsplash.com/photo-1723782551112-8789cd92560e?w=800&q=75&fm=jpg&fit=crop" alt="Lighthouse lantern room overlooking the sea">
+        <div class="tag">Lamp housing proportions</div>
+      </div>
+
+      <div class="board-tile" style="--tilt:1.5deg;">
+        <img src="https://images.unsplash.com/photo-1698334913810-1b5997bb1ef9?w=800&q=75&fm=jpg&fit=crop" alt="Foggy day at the beach">
+        <div class="tag">Lighting / atmosphere</div>
+      </div>
+
+      <div class="board-tile" style="--tilt:-1deg;">
+        <img src="https://images.unsplash.com/photo-1759141274838-593f81b8e5c3?w=800&q=75&fm=jpg&fit=crop" alt="Close-up of weathered rusty metal texture">
+        <div class="tag">Metal weathering</div>
+      </div>
+
+      <div class="board-tile" style="--tilt:2deg;">
+        <img src="https://images.unsplash.com/photo-1635973745864-c9803dd01f53?w=800&q=75&fm=jpg&fit=crop" alt="Weathered driftwood on a beach">
+        <div class="tag">Timber weathering</div>
+      </div>
     </div>
-    <div class="moodboard-item">
-      <img src="https://images.unsplash.com/photo-1698334913810-1b5997bb1ef9?w=800&q=75&fm=jpg&fit=crop" alt="Foggy day at the beach">
-      <div class="cap"><strong>Lighting/atmosphere</strong>The fog density and flat, cool light I'm aiming for in the scene. Photo: Alex Moliski / <a href="https://unsplash.com/photos/a-foggy-day-at-the-beach-with-trees-on-the-shore-pGvAKyC3Vyo" target="_blank" rel="noopener">Unsplash</a></div>
-    </div>
-    <div class="moodboard-item">
-      <img src="https://images.unsplash.com/photo-1759141274838-593f81b8e5c3?w=800&q=75&fm=jpg&fit=crop" alt="Close-up of weathered rusty metal texture">
-      <div class="cap"><strong>Metal weathering</strong>Rust/oxidation pattern for the lamp mechanism and hinges — texture reference, baked in, not modelled. Photo: Volodymyr Leush / <a href="https://unsplash.com/photos/close-up-of-weathered-rusty-metal-surface-texture-7AhS4dCtS6A" target="_blank" rel="noopener">Unsplash</a></div>
-    </div>
-    <div class="moodboard-item">
-      <img src="https://images.unsplash.com/photo-1635973745864-c9803dd01f53?w=800&q=75&fm=jpg&fit=crop" alt="Weathered driftwood on a beach">
-      <div class="cap"><strong>Timber weathering</strong>Grain/greying reference for the Rowboat, Pier Post, and Lobster Trap textures. Photo: Sebastian Schuster / <a href="https://unsplash.com/photos/a-large-pile-of-weathered-driftwood-on-a-beach-q45Fn4EhwAc" target="_blank" rel="noopener">Unsplash</a></div>
-    </div>
+
+    <p style="font-size:0.85rem;color:var(--fog-dim);margin:1.4rem 0 0;">Photo credits: Lamp housing — Katja Ano / <a href="https://unsplash.com/photos/lighthouse-lantern-room-overlooking-the-sea-BQn0qyTnOzk" target="_blank" rel="noopener">Unsplash</a>. Atmosphere — Alex Moliski / <a href="https://unsplash.com/photos/a-foggy-day-at-the-beach-with-trees-on-the-shore-pGvAKyC3Vyo" target="_blank" rel="noopener">Unsplash</a>. Metal — Volodymyr Leush / <a href="https://unsplash.com/photos/close-up-of-weathered-rusty-metal-surface-texture-7AhS4dCtS6A" target="_blank" rel="noopener">Unsplash</a>. Timber — Sebastian Schuster / <a href="https://unsplash.com/photos/a-large-pile-of-weathered-driftwood-on-a-beach-q45Fn4EhwAc" target="_blank" rel="noopener">Unsplash</a>. Gathered for atmosphere, material, and proportion reference only — actual props are modelled from scratch, per the academic integrity requirements on the Folio Inquiry page.</p>
   </div>
-  <p style="font-size:0.88rem;color:var(--fog-dim)">Still to add: <em>The Lighthouse</em> (2019) film stills for lighting reference, and a proper PureRef board built from these plus more — this is a starting set, not the finished board.</p>
 
 
   <h2>Sonic Moodboard</h2>
-  <p>One image/audio pair per sound category from the audio asset plan. Four of the five are locked in and licence-checked; the fifth is still an open pick.</p>
+  <p>One image/audio pair per sound category from the audio asset plan. <strong>Folio 2 update:</strong> the original fog/waves pair leaned too heavily on the same watery-ambient texture, so I've added a ship horn and a wind reference to actually spread the sonic palette across distinct sound types (nautical signal, water, wildlife, timber creak, wind, and — still open — a tonal drone) instead of stacking similar-sounding water loops.</p>
 
   <div class="sonic-row">
     <div>
@@ -84,6 +96,20 @@
       <div class="visual">Cliffside waves</div>
     </div>
     <div>"Waves and seagulls" by JosephSardin — <a href="https://freesound.org/people/JosephSardin/sounds/500355/" target="_blank" rel="noopener">Freesound ↗</a> (CC0, verified)</div>
+  </div>
+  <div class="sonic-row">
+    <div>
+      <div class="cat">Nautical signal</div>
+      <div class="visual">Distant ship passing offshore</div>
+    </div>
+    <div>"Ship Horn Very Close" by freesound_community — <a href="https://pixabay.com/sound-effects/ship-horn-very-close-14642/" target="_blank" rel="noopener">Pixabay ↗</a> (Pixabay Content License, free for use)</div>
+  </div>
+  <div class="sonic-row">
+    <div>
+      <div class="cat">Atmosphere</div>
+      <div class="visual">Strong wind across the cliff top</div>
+    </div>
+    <div>"Bitter Cold Wind" by DRAGON-STUDIO — <a href="https://pixabay.com/sound-effects/nature-bitter-cold-wind-482876/" target="_blank" rel="noopener">Pixabay ↗</a> (Pixabay Content License, free for use)</div>
   </div>
   <div class="sonic-row">
     <div>
@@ -110,7 +136,7 @@
 </main>
 
 <footer class="site-footer">
-  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 1
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 2
 </footer>
 </body>
 </html>

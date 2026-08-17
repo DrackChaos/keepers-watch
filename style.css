@@ -282,6 +282,62 @@ td:has(code), td.num { font-family: var(--mono); font-variant-numeric: tabular-n
 .swatch code { font-family: var(--mono); font-size: 0.74rem; color: var(--fog-dim); }
 .swatch .label { font-size: 0.85rem; color: #fff; font-family: var(--body); }
 
+.board {
+  border: 1px solid var(--brown-line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 1.6rem 1.6rem 1.8rem;
+  margin: 1.2rem 0 2.4rem;
+}
+.board-intro { font-size: 0.98rem; margin: 0 0 1.4rem; max-width: none; }
+.board-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.1rem;
+}
+.board-tile {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ink);
+  border: 6px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.2s ease;
+}
+.board-tile:hover { transform: rotate(0deg) scale(1.03); z-index: 2; }
+.board-tile img { display: block; width: 100%; height: 210px; object-fit: cover; }
+.board-tile .tag {
+  position: absolute; left: 0.5rem; bottom: 0.5rem;
+  background: rgba(8,20,34,0.82);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.55rem;
+  border-radius: 3px;
+}
+.board-tile.palette-tile {
+  border: 6px solid #fff;
+  display: flex;
+}
+.board-tile.palette-tile .chip-strip { display: flex; width: 100%; height: 210px; }
+.board-tile.palette-tile .chip-strip > div { flex: 1; }
+.board-tile.type-tile {
+  border: 6px solid #fff;
+  height: 210px;
+  background: var(--fog);
+  color: var(--ink);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.board-tile.type-tile .sample-display { font-family: var(--display); font-size: 1.8rem; line-height: 1.1; }
+.board-tile.type-tile .sample-body { font-family: var(--body); font-size: 0.95rem; }
+.board-tile.type-tile .sample-mono { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.03em; }
+
 .sonic-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
