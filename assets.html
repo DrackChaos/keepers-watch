@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Assets — Keeper's Watch</title>
+<title>3D Assets — Keeper's Watch (Final Folio)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,460;9..144,560;9..144,650&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -19,6 +19,8 @@
       <li><a href="moodboard.html">Moodboard</a></li>
       <li><a href="asset-plan.html">Asset Plan</a></li>
       <li><a class="current" href="assets.html">3D Assets</a></li>
+      <li><a href="audio.html">Audio Assets</a></li>
+      <li><a href="scene-integration.html">Scene Integration</a></li>
       <li><a href="timeline.html">Asset Management &amp; Timeline</a></li>
       <li><a href="reflection.html">Reflection</a></li>
     </ul>
@@ -27,12 +29,12 @@
 </header>
 
 <section class="photo-hero page" style="background-image:url('https://images.unsplash.com/photo-1767730794811-cdeb9c786f22?w=2200&q=80&fm=jpg&fit=crop');">
-  <div class="inner"><h1>3D Assets — Progressive Folio 2</h1></div>
+  <div class="inner"><h1>3D Assets — Final Folio</h1></div>
   <p class="photo-credit">Photo: paws and prints / <a href="https://unsplash.com/photos/waves-crashing-against-weathered-posts-on-a-beach-9SLoQWoGScs" target="_blank" rel="noopener">Unsplash</a></p>
 </section>
 
 <main class="wrap">
-  <p style="margin-top:2.4rem;">Two assets are underway for this checkpoint: the <strong>Lighthouse Lamp Housing</strong> (hero asset, fully modelled and textured) and the <strong>Lobster Trap</strong> (fully modelled, texture pass still to come). Both galleries below are ordered as a build breakdown — since I only started capturing process shots after most of the geometry was already in place, these are grouped by construction stage rather than a literal undo-history timeline. Each image is captioned with what that stage shows.</p>
+  <p style="margin-top:2.4rem;">All 4 planned assets are complete: the <strong>Lighthouse Lamp Housing</strong> (hero asset), the <strong>Lobster Trap</strong>, the <strong>Pier</strong> (expanded in scope from a single repeating post to a full branching walkway), and the <strong>Weathered Rowboat</strong>. Each gallery below is ordered as a build breakdown — grouped by construction stage (block-out → UV → materials → final render) rather than a literal undo-history timeline, since process shots weren't always captured continuously. Each image is captioned with what that stage shows.</p>
 
   <h2 id="lighthouse">Lighthouse Lamp Housing</h2>
   <p><strong>Status:</strong> Fully modelled and textured — the hero asset for this scene.</p>
@@ -106,7 +108,7 @@
   <p style="font-size:0.85rem;color:rgba(217,217,217,0.7)">Interactive viewer — click and drag to rotate, scroll to zoom. Downloads disabled. <a href="https://sketchfab.com/3d-models/lighthouse-fad02bc495e5433b9fe2af149299af9c" target="_blank" rel="noopener">View on SketchFab</a></p>
 
   <h2 id="lobstertrap">Lobster Trap</h2>
-  <p><strong>Status:</strong> Fully modelled, texture pass not started yet. This is a scope increase from the Folio 1 plan — I'd originally planned to bake the rope weave and wood weathering into the texture rather than modelling it, but ended up building the wire-mesh cage and woven funnel netting as real geometry instead.</p>
+  <p><strong>Status:</strong> Fully modelled and textured. This is a scope increase from the Folio 1 plan — I'd originally planned to bake the rope weave and wood weathering into the texture rather than modelling it, but ended up building the wire-mesh cage and woven funnel netting as real geometry instead. A rope-and-buoy detail was added during texturing to carry the storytelling further.</p>
 
   <div class="moodboard-grid">
     <div class="moodboard-item">
@@ -183,17 +185,266 @@
     </div>
   </div>
 
-  <div class="placeholder">Texture pass and 2D final renders — planned before the Final Folio.</div>
+  <h3>UV unwrapping</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/19_uv_unwrap_ring.png" alt="UV layout of the entrance ring, unwrapped via Smart UV Project">
+      <div class="cap"><strong>19 — Entrance ring UV</strong>The ring is a torus, so a cube projection would stretch badly on the curve — used Smart UV Project instead, which auto-places seams and gave a clean, evenly-packed layout.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/19b_uv_unwrap_boxes.png" alt="UV layout of a frame slat, unfolded into a cube net">
+      <div class="cap"><strong>19b — Frame/slat UV</strong>Box-shaped parts (slats, floor, posts) unwrapped with Cube Projection, producing a proper unfolded net instead of relying on the default flat mapping Blender assigns to a new mesh.</div>
+    </div>
+  </div>
+
+  <h3>Materials</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/20_material_nodes_driftwood.webp" alt="Shader node graph for the procedural Driftwood wood material">
+      <div class="cap"><strong>20 — Driftwood material (procedural)</strong>Two layered Noise Textures — one through a ColorRamp for mottled base colour, one through Map Range into a Bump node for surface grain — instead of a single flat image texture, so the wood doesn't visibly tile across the repeated slats.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/21_material_nodes_netting.webp" alt="Shader node graph for the flat teal Netting material">
+      <div class="cap"><strong>21 — Netting material</strong>A simpler flat-colour Principled BSDF — the woven look here comes from real modelled geometry (the mesh grid itself), not a texture trick, so the material only needed to supply a plausible weathered-wire colour and roughness.</div>
+    </div>
+  </div>
+
+  <h3>Textured final renders</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/22_textured_final_hero.png" alt="Fully textured lobster trap with wood, netting, and a rope-and-buoy detail">
+      <div class="cap"><strong>22 — Full assembly, textured</strong>Wood frame, teal wire-mesh cage, and the entrance ring together, with the added rope-and-buoy detail trailing off to one side.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/23_textured_final_closeup_entrance.png" alt="Close-up of the entrance ring and woven funnel netting, showing individual interwoven strands">
+      <div class="cap"><strong>23 — Close-up, entrance funnel</strong>The woven netting is real interlocking geometry, not a flat pattern — you can see individual strands casting shadows on each other and the interior shelving through the funnel.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/lobstertrap/24_textured_final_fixed.png" alt="Final corrected render after fixing the glTF export, wood grain visible">
+      <div class="cap"><strong>24 — Post export-fix</strong>See the note below the SketchFab embed — this is the corrected result after tracking down why the exported model was losing its wood colour.</div>
+    </div>
+  </div>
 
   <h3>SketchFab</h3>
   <div class="sketchfab-wrap">
     <iframe title="Lobster Trap" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/304cd00d7f5b49019cee10d8edd2a4b5/embed"></iframe>
   </div>
   <p style="font-size:0.85rem;color:rgba(217,217,217,0.7)">Interactive viewer — click and drag to rotate, scroll to zoom. Downloads disabled. <a href="https://sketchfab.com/3d-models/lobster-trap-304cd00d7f5b49019cee10d8edd2a4b5" target="_blank" rel="noopener">View on SketchFab</a></p>
+  <p>The wood material is procedural (noise-driven, not an image texture), which caused a real problem on first export: glTF/SketchFab can't interpret arbitrary shader node graphs, only flat values or actual image textures, so the exported model came out flat white where the wood should be. Fixed by baking the Driftwood material to a 2048×2048 image (Cycles, Bake Type: Diffuse → Color only) and rewiring that baked image into Base Color before re-exporting — along with turning on <strong>Apply Modifiers</strong> in the glTF export settings, which had been silently dropping modifier-driven geometry from the file.</p>
+
+  <h2 id="pier">Pier</h2>
+  <p><strong>Status:</strong> Fully modelled and textured. Scope grew significantly beyond the original "single repeating Pier Post" plan — after working from a boardwalk-pier reference image, this became a full branching walkway structure (multiple connecting sections, double-tier railings, clustered support posts with cross-bracing), a deliberate trade-off to get a stronger visual centrepiece for the scene. One consequence of that: the finished asset sits at roughly 162k triangles, well above the ~3,000 tri budget the Folio 1 plan set for this prop — a conscious choice to prioritise visual complexity here over the original Quest 3S budget, discussed further in the Reflection page.</p>
+
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/pier/01_deck_plank_single.png" alt="Single deck plank block-out">
+      <div class="cap"><strong>01 — Deck plank</strong>The single board that everything else in the deck is built from.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/02_deck_segment_boards.png" alt="Multiple deck planks arranged into one segment">
+      <div class="cap"><strong>02 — Deck segment boards</strong>Planks arranged side by side into one walkway segment.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/03_deck_segment_fascia_joists.png" alt="Deck segment with fascia trim and underlying joists">
+      <div class="cap"><strong>03 — Fascia + joists</strong>Trim board around the segment edge, plus the joists underneath that the boards actually sit on.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/04_walkway_run_segments_duplicated.png" alt="Deck segment duplicated into a longer walkway run">
+      <div class="cap"><strong>04 — Segments duplicated</strong>One finished segment repeated along the walkway's length.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/05_support_post_single.png" alt="Single tapered support post">
+      <div class="cap"><strong>05 — Support post</strong>The base post shape, reused everywhere underneath the structure.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/06_support_bent_posts_cap_brace.png" alt="Pair of posts with a slight bend, connected by a cap and diagonal brace">
+      <div class="cap"><strong>06 — Post cluster + brace</strong>Posts angled slightly rather than perfectly vertical, tied together with a cap piece and diagonal cross-brace — this is what makes the substructure read as a real built pier rather than a repeated primitive.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/07_substructure_run_linked_posts.png" alt="Full run of linked post clusters under the deck">
+      <div class="cap"><strong>07 — Substructure run</strong>Post clusters repeated under the full deck run.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/08_railing_single_bay.png" alt="Single bay of double-tier railing with balusters">
+      <div class="cap"><strong>08 — Railing, single bay</strong>One repeating unit of the double-tier railing — lower rail, upper handrail, vertical balusters between.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/09_railings_on_deck_segment.png" alt="Railing bays placed along one deck segment">
+      <div class="cap"><strong>09 — Railings on a segment</strong>Railing bays repeated along one deck segment's edge.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/10_main_walkway_assembled.png" alt="Main walkway assembled with deck, substructure, and railings">
+      <div class="cap"><strong>10 — Main walkway assembled</strong>Deck, substructure, and railings combined into the primary walkway run.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/11_full_layout_blockout_angle.png" alt="Full branching pier layout, untextured, angled view">
+      <div class="cap"><strong>11 — Full layout, angle</strong>The complete branching structure before texturing.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/12_full_layout_blockout_front.png" alt="Full branching pier layout, untextured, front view">
+      <div class="cap"><strong>12 — Full layout, front</strong>Front-on view showing how the branches connect.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/13_full_layout_blockout_top.png" alt="Full branching pier layout, untextured, top-down view">
+      <div class="cap"><strong>13 — Full layout, top-down</strong>Overhead view of the full branching layout.</div>
+    </div>
+  </div>
+
+  <h3>UV unwrapping</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/pier/14_uv_deck_plank_cube_projection_layout.png" alt="UV layout of a deck plank via Cube Projection">
+      <div class="cap"><strong>14 — Deck plank UV</strong>Flat/boxy geometry → Cube Projection, same technique as the Lobster Trap's slats.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/15_uv_post_seam_unwrap_layout.png" alt="UV layout of a support post via seam-based unwrap">
+      <div class="cap"><strong>15 — Post UV</strong>Cylindrical geometry → one vertical seam + Unwrap, giving an unrolled strip plus cap circles rather than a stretched cube projection.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/16_uv_railing_cube_projection_layout.png" alt="UV layout of a railing baluster via Cube Projection">
+      <div class="cap"><strong>16 — Railing UV</strong>Flat/boxy balusters and rails → Cube Projection again.</div>
+    </div>
+  </div>
+
+  <h3>Materials</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/pier/17_material_nodes_weathered_deck_overview.png" alt="Shader node graph overview for the WeatheredDeck material">
+      <div class="cap"><strong>17 — WeatheredDeck</strong>A bigger node graph than the earlier Driftwood material — per-board and per-post random inputs feed separate noise layers, so individual planks and posts vary instead of repeating identically.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/18_material_nodes_weathered_paint_overview.png" alt="Shader node graph overview for the WeatheredPaint railing material">
+      <div class="cap"><strong>18 — WeatheredPaint</strong>Separate material for the railings — a paler, chipped-paint look pulling from the same Fog Grey moodboard tone, rather than reusing the timber-brown palette everywhere.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/19_material_nodes_weathered_piling_overview.png" alt="Shader node graph overview for the WeatheredPiling material">
+      <div class="cap"><strong>19 — WeatheredPiling</strong>Third material for the support posts/braces, darker and rougher than the deck to read as waterline timber.</div>
+    </div>
+  </div>
+
+  <h3>Textured final renders</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/pier/20_textured_final_hero.png" alt="Full textured branching pier structure, hero angle">
+      <div class="cap"><strong>20 — Full structure, textured</strong>The complete branching walkway with all three materials applied.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/21_textured_final_closeup_railing.png" alt="Close-up of the double-tier railing detail">
+      <div class="cap"><strong>21 — Close-up, railing</strong>Double-tier rail and baluster detail up close.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/22_textured_final_closeup_posts_braces.png" alt="Close-up of post clusters and diagonal cross-bracing">
+      <div class="cap"><strong>22 — Close-up, substructure</strong>Post clusters and diagonal bracing underneath the deck.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/pier/23_textured_final_white_background.png" alt="Full pier on a plain white background">
+      <div class="cap"><strong>23 — Isolated view</strong>Plain background render for a clean look at the whole structure.</div>
+    </div>
+  </div>
+
+  <h3>SketchFab</h3>
+  <div class="sketchfab-wrap">
+    <iframe title="Pier" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f6292b6b5b424823acf3e9e17707e525/embed"></iframe>
+  </div>
+  <p style="font-size:0.85rem;color:rgba(217,217,217,0.7)">Interactive viewer — click and drag to rotate, scroll to zoom. Downloads disabled. <a href="https://sketchfab.com/3d-models/pier-f6292b6b5b424823acf3e9e17707e525" target="_blank" rel="noopener">View on SketchFab</a></p>
+  <p>Same glTF export issue as the Lobster Trap, but across three separate procedural materials at once (WeatheredDeck, WeatheredPaint, WeatheredPiling) rather than one — the whole structure exported flat white on the first attempt. Fixed the same way: baked each material to its own image (Cycles, Diffuse/Color only) and rewired each into its Principled BSDF's Base Color before re-exporting.</p>
+
+  <h2 id="rowboat">Weathered Rowboat</h2>
+  <p><strong>Status:</strong> Fully modelled and textured. Beached/half-sunk storytelling prop — a mooring rope trails from the bow (physically connecting this asset to the Pier in the composed scene) and a small outboard motor was added as an extra detail beyond the original plan.</p>
+
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/rowboat/01_hull_blockout_side_profile.png" alt="Rowboat hull block-out, side profile">
+      <div class="cap"><strong>01 — Hull block-out, side</strong>Shaping the hull's length and curve against the side reference.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/02_hull_top_down_taper.png" alt="Rowboat hull shaped from a top-down view showing the taper toward bow and stern">
+      <div class="cap"><strong>02 — Hull, top-down taper</strong>Width tapering toward bow and stern, matched against the top-down reference.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/03_hull_blockout_three_quarter.png" alt="Rowboat hull block-out, three-quarter angle">
+      <div class="cap"><strong>03 — Hull, three-quarter</strong>Checking the double-curvature reads correctly from an angle, not just the flat reference views.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/04_interior_thwarts_frames_floorboards.png" alt="Interior bench seats, frames, and floorboards added inside the hull">
+      <div class="cap"><strong>04 — Interior detail</strong>Bench seats (thwarts), internal frames, and floorboards inside the hull.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/05_storytelling_outboard_rope_bilgewater.png" alt="Storytelling details: outboard motor, mooring rope, and bilge water">
+      <div class="cap"><strong>05 — Storytelling pass</strong>Outboard motor, mooring rope, and a hint of bilge water added — the details that push this from "a boat" to "this specific abandoned boat."</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/06_outboard_engine_closeup.png" alt="Close-up of the outboard motor detail">
+      <div class="cap"><strong>06 — Outboard motor, close-up</strong>Not in the original asset plan — added during detailing as a small, cheap addition that adds a lot of narrative read.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/07_bow_ring_mooring_rope_closeup.png" alt="Close-up of the bow mooring ring and rope">
+      <div class="cap"><strong>07 — Bow ring + rope, close-up</strong>The rope that ties this asset to the Pier in the composed scene later.</div>
+    </div>
+  </div>
+
+  <h3>UV unwrapping</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/rowboat/08_uv_hull_smart_uv_project_layout.png" alt="UV layout of the hull via Smart UV Project">
+      <div class="cap"><strong>08 — Hull UV</strong>The hull is a genuinely curved, organic shape — Smart UV Project auto-places seams and packs the layout without manual guesswork, same tool used on the Lobster Trap's entrance ring.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/09_uv_thwarts_cube_projection_layout.png" alt="UV layout of the bench seats via Cube Projection">
+      <div class="cap"><strong>09 — Thwarts UV</strong>Flat bench seats → Cube Projection.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/10_uv_outboard_cube_projection_layout.png" alt="UV layout of the outboard motor via Cube Projection">
+      <div class="cap"><strong>10 — Outboard UV</strong>Boxy motor housing → Cube Projection.</div>
+    </div>
+  </div>
+
+  <h3>Materials</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/rowboat/13_material_weathered_timber_procedural_overview.png" alt="Overview of the WeatheredTimber_Rowboat procedural material">
+      <div class="cap"><strong>13 — WeatheredTimber_Rowboat (base)</strong>The starting wood material for the hull, following the same Driftwood-family node approach as the other assets.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/14_material_waterline_node_extension.png" alt="Node graph extension adding waterline weathering to the hull material">
+      <div class="cap"><strong>14 — Waterline weathering extension</strong>The strongest technical work in the folio — a labelled node group using the hull's Z-position to mask a "tide line" band, blending in a cooler, damper colour and reducing roughness ("wet = less rough") toward the bottom of the hull. This is what actually sells "half-sunk," not just a dark colour choice.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/15_material_weathered_timber_wood_layers.png" alt="Detail of the wood grain noise layers feeding the material">
+      <div class="cap"><strong>15 — Wood grain layers</strong>The underlying noise layers that give the grain its variation before the waterline extension blends over it.</div>
+    </div>
+  </div>
+
+  <h3>Textured final renders</h3>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/rowboat/17_textured_final_render_hero.png" alt="Fully textured rowboat, hero angle, showing waterline weathering">
+      <div class="cap"><strong>17 — Hero render</strong>Waterline weathering visible along the hull, rope and outboard motor in place.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/18_textured_final_render_stern.png" alt="Fully textured rowboat, stern view">
+      <div class="cap"><strong>18 — Stern view</strong>Interior thwarts and floorboards visible from this angle.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/19_textured_final_render_outboard.png" alt="Close-up of the textured outboard motor">
+      <div class="cap"><strong>19 — Outboard, textured</strong>Close-up on the added motor detail.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/rowboat/20_textured_final_white_background.png" alt="Fully textured rowboat on a plain white background">
+      <div class="cap"><strong>20 — Isolated view</strong>Plain background render of the finished asset.</div>
+    </div>
+  </div>
+
+  <h3>SketchFab</h3>
+  <div class="sketchfab-wrap">
+    <iframe title="Rowboat" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8a765cbd59f4446c91730caeb300b1e6/embed"></iframe>
+  </div>
+  <p style="font-size:0.85rem;color:rgba(217,217,217,0.7)">Interactive viewer — click and drag to rotate, scroll to zoom. Downloads disabled. <a href="https://sketchfab.com/3d-models/rowboat-8a765cbd59f4446c91730caeb300b1e6" target="_blank" rel="noopener">View on SketchFab</a></p>
+  <p>The waterline weathering extension was added to the hull's shader after an earlier bake had already been done, so the exported model initially still showed the pre-extension procedural nodes instead of the intended result. Re-baked the material after finishing the extension (capturing the current look, not the outdated one) and re-wired the fresh bake into Base Color before re-exporting — the rope and outboard motor materials were simple flat colours and didn't need baking.</p>
 </main>
 
 <footer class="site-footer">
-  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 2
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Final Folio
 </footer>
 </body>
 </html>

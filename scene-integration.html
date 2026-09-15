@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scene Integration — Keeper's Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,460;9..144,560;9..144,650&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="brand" href="index.html">Keeper's Watch</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inquiry.html">Folio Inquiry</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="moodboard.html">Moodboard</a></li>
+      <li><a href="asset-plan.html">Asset Plan</a></li>
+      <li><a href="assets.html">3D Assets</a></li>
+      <li><a href="audio.html">Audio Assets</a></li>
+      <li><a class="current" href="scene-integration.html">Scene Integration</a></li>
+      <li><a href="timeline.html">Asset Management &amp; Timeline</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+    </ul>
+  </nav>
+  <div class="beam-rule"></div>
+</header>
+
+<section class="photo-hero page" style="background-image:url('https://images.unsplash.com/photo-1767730794811-cdeb9c786f22?w=2200&q=80&fm=jpg&fit=crop');">
+  <div class="inner"><h1>Scene Integration — Final Folio</h1></div>
+  <p class="photo-credit">Photo: paws and prints / <a href="https://unsplash.com/photos/waves-crashing-against-weathered-posts-on-a-beach-9SLoQWoGScs" target="_blank" rel="noopener">Unsplash</a></p>
+</section>
+
+<main class="wrap">
+  <p style="margin-top:2.4rem;">All 4 finished assets — the <strong>Lighthouse Lamp Housing</strong>, <strong>Pier</strong>, <strong>Rowboat</strong>, and <strong>Lobster Trap</strong> — composed together in one scene, at consistent scale and lighting, with the ambient audio beds layered on top. This is the demonstration of how the individually-modelled props actually come together to tell the <a href="inquiry.html">folio inquiry</a>'s story, rather than existing as four disconnected gallery pieces.</p>
+
+  <h2>The composed scene</h2>
+  <div class="moodboard-grid">
+    <div class="moodboard-item">
+      <img src="media/scene-integration/05_full_scene_hero.png" alt="Full scene: pier branching across the water toward the lit lighthouse on its rocky base">
+      <div class="cap"><strong>Full-scene hero angle</strong>All 4 assets visible together — Pier connecting the shore to the Lighthouse's rocky base, with consistent dusk lighting and water reflections across everything.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/scene-integration/02_pier_to_lighthouse.png" alt="View down the branching pier walkway toward the lighthouse">
+      <div class="cap"><strong>Down the pier, toward the light</strong>The walkway is the primary path a visitor would take through the space — this angle is built around that path leading the eye (and the player) straight to the tower.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/scene-integration/04_rowboat_trap_rope.png" alt="Rowboat beached under the pier, Lobster Trap resting inside it, mooring rope tied to a pier post">
+      <div class="cap"><strong>Rowboat, Trap, and rope — the storytelling shot</strong>The Lobster Trap sits inside the Rowboat rather than out on the pier deck, and the boat is tied off to a pier post rather than adrift. See the write-up below for why.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/scene-integration/03_lighthouse_closeup.png" alt="Close-up on the lighthouse tower within the composed scene">
+      <div class="cap"><strong>Lighthouse, in context</strong>Confirms the existing texture work (red lamp room, black railing, wood-trimmed door) still reads correctly once placed in the full scene rather than isolated on a plain background.</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="media/scene-integration/01_lobstertrap_detail.png" alt="Close-up of the Lobster Trap resting on the pier deck">
+      <div class="cap"><strong>Lobster Trap, close-up</strong>Detail shot confirming the wood grain and netting geometry hold up at close range within the composed scene.</div>
+    </div>
+  </div>
+
+  <h2>Ambient audio mix</h2>
+  <div class="moodboard-item" style="max-width:640px;">
+    <img src="media/scene-integration/06_audio_mix_timeline.png" alt="Multi-track timeline showing Ocean Waves, two staggered Wind Cliffside tracks, Distant Bell Buoy, and sparse Foghorn blasts layered together">
+    <div class="cap"><strong>Layered mix, built in Blender's Sequencer</strong>Ocean Waves and Wind Cliffside (two staggered tracks, to avoid an obviously repeating loop) as the constant close presence; Distant Bell Buoy pulled back to -2.5dB; Foghorn appearing only twice at -8dB as a sparse accent rather than a loop.</div>
+  </div>
+  <audio controls style="width:100%;max-width:640px;margin-top:0.8rem;">
+    <source src="media/audio/AUD_SceneIntegration_AmbientMix_Final.wav" type="audio/wav">
+    Your browser doesn't support inline audio playback — the file is at media/audio/AUD_SceneIntegration_AmbientMix_Final.wav.
+  </audio>
+
+  <h2>How this ties back to the inquiry</h2>
+  <p>The query frames the tower as the center of the experience, and the lighthouse, which is at the highest point, provides the obvious visual anchor that the pier path goes toward. Since the walkway, which stretches from the beach to the rocky foundation, is the main route a visitor would follow through the area, its size and the uniform twilight lighting throughout each asset were given more weight than the specifics of any one prop.</p>
+  <p>The Rowboat and Lobster Trap grouping accomplishes the most narrative work since the boat is moored to a pier post rather than floating, and the trap is located within the boat rather than outside on the pier. The purpose of such arrangement is to use what has been left behind, rather than text, to raise the same issue that forms the basis of the folio inquiry ("what happened to the keeper?"). Someone tied them up, left the trap, and never returned.</p>
+  <p>The ambient audio mix sonically reinforces the same "quiet, abandoned" read: the Foghorn appears only twice throughout the mix as a sparse, occasional accent rather than a loop; Ocean Waves and Wind Cliffside sit as the constant, close presence (loudest in the mix, since a visitor standing on the pier would be closest to both); and the Distant Bell Buoy is pulled back to read as far offshore. This is consistent with the spatial-audio logic that has previously been mentioned in the <a href="references.html">References page</a> (Poeschl &amp; Doering, 2013; Almeida et al., 2023) on how sound reinforces presence rather than merely decorates it.</p>
+</main>
+
+<footer class="site-footer">
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Final Folio
+</footer>
+</body>
+</html>

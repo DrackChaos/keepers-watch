@@ -19,6 +19,8 @@
       <li><a href="moodboard.html">Moodboard</a></li>
       <li><a href="asset-plan.html">Asset Plan</a></li>
       <li><a href="assets.html">3D Assets</a></li>
+      <li><a href="audio.html">Audio Assets</a></li>
+      <li><a href="scene-integration.html">Scene Integration</a></li>
       <li><a class="current" href="timeline.html">Asset Management &amp; Timeline</a></li>
       <li><a href="reflection.html">Reflection</a></li>
     </ul>
@@ -38,49 +40,64 @@
   <pre class="tree">KeepersWatch_Folio/
 ├── 01_Reference/               (moodboard exports, research PDFs, citations)
 ├── 02_3D/
-│   ├── LighthouseLamp/          — hero asset, DONE (modelled + textured)
-│   │   ├── LighthouseLamp.blend       (source file)
+│   ├── LighthouseLamp/          — DONE (modelled + textured, hero asset, live on SketchFab)
+│   │   ├── LighthouseLamp.blend
 │   │   ├── LighthouseLamp.blend1      (autosave backup)
 │   │   ├── LighthouseLamp.glb         (exported, SketchFab-ready)
 │   │   └── screenshots/               (11 dev-process shots: blockout → assembly → textured final)
-│   ├── LobsterTrap/             — DONE (modelled), texture pass pending
+│   ├── LobsterTrap/             — DONE (modelled + textured, real wire-mesh geometry, live on SketchFab)
 │   │   ├── LobsterTrap.blend
 │   │   ├── LobsterTrap.blend1
 │   │   ├── LobsterTrap.glb
-│   │   └── screenshots/               (18 dev-process shots: frame → mesh cage → funnel → assembly)
-│   ├── Rowboat/                  — not started, planned Week 8–9
-│   ├── PierPost/                 — not started, planned Week 8–9
-│   └── SeagullNest/              — not started, stretch asset, Week 10 if time allows
+│   │   ├── textures/                  (baked Driftwood diffuse — see note below on why this exists now)
+│   │   └── screenshots/               (24 dev-process shots: frame → mesh cage → funnel → UV → materials → export fix)
+│   ├── Pier/                    — DONE (expanded in scope to a full boardwalk, live on SketchFab)
+│   │   ├── Boardwalk_Pier.blend
+│   │   ├── Boardwalk_Pier.blend1
+│   │   ├── render_hires.py            (camera/render automation script — not asset-generating)
+│   │   └── screenshots/               (23 dev-process shots: deck → substructure → railings → UV → materials → final)
+│   ├── Rowboat/                 — DONE (waterline weathering detail, live on SketchFab)
+│   │   ├── Rowboat_packed.blend
+│   │   ├── export/                    (Rowboat.glb + baked wood texture)
+│   │   └── screenshots/               (20 dev-process shots)
+│   ├── SceneIntegration/ + combine/   — composed scene combining all 4 finished assets
+│   │   └── combine/photos/            (5 composed-scene screenshots — see Scene Integration page)
+│   └── SeagullNest/              — cut. Dropped as the stretch 5th asset once the other 4 were confirmed feasible; see Reflection for the reasoning.
 ├── 03_Audio/
-│   ├── Raw/                    (unedited source recordings/downloads — not started)
-│   └── Final/                  (edited, folio-ready .wav files — not started)
+│   ├── Raw/                    (11 sourced/recorded raw clips, each logged with licence/source in the asset inventory)
+│   ├── Final/                  (8 edited, folio-ready .wav files + 1 layered ambient mix for Scene Integration)
+│   └── screenshots/            (editing-process screenshot per finished clip)
 ├── 04_Documentation/            (asset list, timeline, working docs)
 └── 05_Exports/                  (final render screenshots, glTF/SketchFab bundles)</pre>
 
   <div class="moodboard-grid" style="margin-top:1.2rem;">
     <div class="moodboard-item">
-      <img src="folder-structure-3d.png" alt="Screenshot of the 02_3D folder in Windows Explorer, showing all five asset subfolders" style="height:auto;">
-      <div class="cap"><strong>02_3D/ — all five asset folders</strong>LighthouseLamp and LobsterTrap populated; Rowboat, PierPost, SeagullNest still empty (not started).</div>
+      <img src="folder-structure-root.png" alt="Screenshot of the KeepersWatch_Folio root folder in Windows Explorer" style="height:auto;">
+      <div class="cap"><strong>KeepersWatch_Folio/ — top level</strong>The five top-level folders from the original plan, unchanged in structure since Folio 1.</div>
     </div>
     <div class="moodboard-item">
-      <img src="folder-structure-lighthouse.png" alt="Screenshot inside the LighthouseLamp folder, showing the .blend, .blend1, .glb files and screenshots subfolder" style="height:auto;">
-      <div class="cap"><strong>LighthouseLamp/ — populated</strong>Source .blend, autosave, exported .glb, and the screenshots/ folder — real files, not a mockup structure.</div>
+      <img src="folder-structure-3d.png" alt="Screenshot of the 02_3D folder in Windows Explorer, showing all current asset subfolders including Pier, Rowboat, SceneIntegration and combine" style="height:auto;">
+      <div class="cap"><strong>02_3D/ — current state</strong>LighthouseLamp, LobsterTrap, Rowboat, Pier all populated and complete; SceneIntegration + combine hold the composed-scene work; SeagullNest stays empty (cut, see Risk &amp; Plan B below).</div>
+    </div>
+    <div class="moodboard-item">
+      <img src="folder-structure-audio.png" alt="Screenshot of the 03_Audio folder in Windows Explorer, showing Raw, Final, screenshots subfolders and the Scene Integration ambient mix project file" style="height:auto;">
+      <div class="cap"><strong>03_Audio/ — current state</strong><code>Raw/</code> (11 sourced clips), <code>Final/</code> (8 edited assets + the layered ambient mix), and <code>screenshots/</code> (editing-process evidence per clip) — all populated.</div>
     </div>
   </div>
 
   <p><strong>Naming convention:</strong> <code>AssetType_AssetName_Version</code> — e.g. <code>3D_LighthouseLamp_v2.blend</code>, <code>AUD_Foghorn_Ambient_Final.wav</code>. No generic names ("new folder," "stuff," "test"). Every folder/file name traces directly back to a row in the Asset Plan tables.</p>
 
-  <p><strong>Why there's no separate <code>textures/</code> subfolder:</strong> both completed models use Blender's Principled BSDF nodes with flat procedural colours (no external image textures — see the material breakdown for the Lighthouse Lamp's `LH_White`, `LH_Red`, `LH_DarkMetal` etc.), so there's no UV-mapped image file to store separately; the colour data lives inside the `.blend` file itself. If a later asset (Rowboat, Pier Post) ends up needing an actual painted texture map, I'll add a `textures/` subfolder under that asset's own folder at that point, following the same naming convention.</p>
+  <p><strong>Update — why <code>textures/</code> subfolders exist now:</strong> the original plan (Folio 2) was that procedural Blender materials wouldn't need a separate textures folder, since the colour data lives inside node graphs in the `.blend` file. That held until export: glTF/SketchFab can't interpret arbitrary shader node graphs, only flat values or actual image textures, so every procedural material had to be <strong>baked</strong> to a real image file before it would export correctly — first discovered on the Lobster Trap (it exported completely flat white), then hit again on the Pier's three materials and the Rowboat's hull after its waterline-weathering extension was added. Each baked image now lives in that asset's own <code>textures/</code> or <code>export/</code> subfolder, following the same naming convention as everything else. This is covered in more technical detail on the <a href="assets.html">3D Assets page</a> and in the Reflection.</p>
 
   <h3>Per-Asset Production Breakdown</h3>
   <p>Granular stage tracking per asset, since the phase-level table above doesn't show individual production steps.</p>
   <table>
     <tr><th>Asset</th><th>Modelled</th><th>UV / Materials</th><th>Textured</th><th>Refined &amp; finalised</th></tr>
-    <tr><td>Lighthouse Lamp Housing <em>(hero)</em></td><td class="status-due">Done — Week 6</td><td>Procedural materials assigned (no UV needed, no image textures)</td><td class="status-due">Done — Week 7</td><td>Week 8 — fix window material contrast (currently reads flat under bright lighting), polish night-beam glow</td></tr>
-    <tr><td>Lobster Trap</td><td class="status-due">Done — Week 7</td><td>Week 8 — decide procedural-colour vs. painted-image approach</td><td>Week 8</td><td>Week 9</td></tr>
-    <tr><td>Rowboat</td><td>Week 8</td><td>Week 8</td><td>Week 9</td><td>Week 9</td></tr>
-    <tr><td>Pier Post</td><td>Week 9</td><td>Week 9</td><td>Week 9</td><td>Week 9</td></tr>
-    <tr><td>Seagull Nest <em>(stretch, cut candidate)</em></td><td>Week 10, if time allows</td><td>Week 10</td><td>Week 10</td><td>Week 10</td></tr>
+    <tr><td>Lighthouse Lamp Housing <em>(hero)</em></td><td class="status-due">Done — Week 6</td><td>Procedural materials, no UV needed</td><td class="status-due">Done — Week 7</td><td class="status-due">Done — carried forward unchanged from Folio 2, live on SketchFab</td></tr>
+    <tr><td>Lobster Trap</td><td class="status-due">Done — Week 7</td><td class="status-due">Done — two techniques (Cube Projection for flat parts, Smart UV Project for the ring), 11 Sep</td><td class="status-due">Done — 11 Sep, including the glTF-export bake fix</td><td class="status-due">Done — live on SketchFab, full documentation set</td></tr>
+    <tr><td>Rowboat</td><td class="status-due">Done — 13 Sep</td><td class="status-due">Done — Smart UV Project (hull) + Cube Projection (thwarts/outboard)</td><td class="status-due">Done — waterline-weathering material extension, re-baked 14 Sep</td><td class="status-due">Done — live on SketchFab, verified textures render correctly</td></tr>
+    <tr><td>Pier <em>(scope expanded from a single repeating post to a full boardwalk)</em></td><td class="status-due">Done — 13 Sep</td><td class="status-due">Done — 3 techniques across one asset (deck/railing via Cube Projection, posts via seam+Unwrap)</td><td class="status-due">Done — 3 materials (WeatheredDeck/Paint/Piling), baked + exported 14 Sep</td><td class="status-due">Done — live on SketchFab. Note: ~162k tris, over the original ~3,000 budget — a deliberate trade-off, see Reflection</td></tr>
+    <tr><td>Seagull Nest <em>(stretch 5th asset)</em></td><td colspan="4">Cut. Once the other 4 assets were confirmed achievable at high quality, the stretch asset was dropped rather than rushed — see Reflection for the reasoning.</td></tr>
   </table>
 
 
@@ -92,18 +109,28 @@
     <tr><td>Week 5</td><td>Technical planning → Execution</td><td>Set up Blender project files per folder structure; begin Lighthouse Lamp Housing (hero asset)</td><td>Delayed — started later than planned</td></tr>
     <tr><td>Week 6</td><td>Execution</td><td>Finish Lighthouse Lamp Housing (textured); begin Rowboat modelling</td><td>Delayed</td></tr>
     <tr><td>Week 7 (now, Fri 28 Aug)</td><td class="status-due">Progressive Folio 2 due</td><td>Minimum 2 completed/textured 3D assets, updated asset mgmt + timeline, reflection</td><td class="status-due">Lighthouse Lamp Housing: modelled + textured. Lobster Trap: modelled, texture pending. Rowboat not started.</td></tr>
-    <tr><td>Week 8–9</td><td>Execution</td><td>Texture the Lobster Trap; begin Rowboat + Pier Post modelling; start sourcing raw audio</td><td>Planned (reordered — Rowboat pushed back to make room for the Lobster Trap's mesh work)</td></tr>
-    <tr><td>Week 10</td><td>Execution</td><td>Finish Seagull Nest (stretch asset, if time allows); edit all 10 audio assets; integrate scene in Sketchfab/engine</td><td>Planned</td></tr>
-    <tr><td>Week 11 (Thu 24 Sep)</td><td class="status-due">Final Folio due</td><td>All 4+ models, 10 audio assets, full eFolio polish, freeze + submit PDF</td><td class="status-due">Due</td></tr>
+    <tr><td>Week 8–9 (29 Aug – 10 Sep)</td><td>Execution</td><td>Texture the Lobster Trap; begin Rowboat + Pier modelling; start sourcing raw audio</td><td>Slower than planned — most of this window went to planning/gap analysis for the Final Folio rather than active modelling</td></tr>
+    <tr><td>Thu 11 Sep</td><td>Execution</td><td>Lobster Trap: UV (both flat-geometry and curved-geometry techniques), procedural materials, glTF export/bake fix, SketchFab live</td><td class="status-due">Done — same day</td></tr>
+    <tr><td>Sat 13 Sep</td><td>Execution</td><td>Pier scope decision (single post → full boardwalk) and Rowboat, both fully modelled + textured</td><td class="status-due">Done — same day, ahead of even the reduced-scope plan</td></tr>
+    <tr><td>Sun 14 Sep</td><td>Execution</td><td>Pier (3 materials) and Rowboat (waterline extension) baked, exported, uploaded to SketchFab; eFolio pages updated</td><td class="status-due">Done — all 4 models fully complete</td></tr>
+    <tr><td>Mon 15 Sep</td><td>Execution</td><td>Audio: sourced 9 remaining raw clips (Freesound, CC0), edited 8 of them same day; Scene Integration scene composed, ambient mix layered, narrative written</td><td class="status-due">Done — audio (8/8) and Scene Integration both closed out same day</td></tr>
+    <tr><td>16–22 Sep</td><td>Execution → Evaluation</td><td>Audio gallery page, folder-structure re-screenshot, critical reflection</td><td>In progress</td></tr>
+    <tr><td>Week 11 (Thu 24 Sep, 8pm)</td><td class="status-due">Final Folio due</td><td>Full eFolio polish, freeze full-site PDF, submit live URL + PDF</td><td class="status-due">On track — all asset-production criteria done well ahead of deadline</td></tr>
   </table>
 
   <h3>Risk &amp; Plan B</h3>
   <p>The Lighthouse Lamp Housing did take longer than the original Week 5–6 window — I was still learning box modelling basics, and the gallery railing in particular took a lot more trial and error to get proportioned correctly than I'd expected. It's now modelled and textured, just later than planned.</p>
-  <p><strong>Folio 2 update:</strong> to keep to two assets for this checkpoint, I pulled the Lobster Trap forward from its original Week 8–9 slot instead of starting the Rowboat, since the Trap was scoped as the simpler prop and gave me a faster path to a second asset. In practice it ended up more involved than planned — I modelled the wire-mesh cage and funnel netting as real geometry rather than baking that detail into the texture — so it's fully modelled but not yet textured. The Rowboat is now pushed into the Week 8–9 window instead. The Seagull Nest (the stretch 5th asset) is still the first thing to cut if time runs short before the Final Folio.</p>
+  <p><strong>Folio 2 update:</strong> to keep to two assets for that checkpoint, I pulled the Lobster Trap forward from its original Week 8–9 slot instead of starting the Rowboat, since the Trap was scoped as the simpler prop and gave me a faster path to a second asset. In practice it ended up more involved than planned — I modelled the wire-mesh cage and funnel netting as real geometry rather than baking that detail into the texture — so at that checkpoint it was fully modelled but not yet textured.</p>
+  <p><strong>Final Folio update:</strong> two real deviations from the original plan, both deliberate:</p>
+  <ul>
+    <li><strong>Pier scope expansion.</strong> The original plan scoped this as a single ~400-tri repeating post. After working from a reference photo of a full boardwalk pier, I chose to build the full branching structure instead — a real time-cost increase, and the finished asset sits at roughly 162k triangles, well above the original budget. That's a conscious trade-off (visual impact over strict poly discipline for this one prop), not an oversight, and it's discussed further in the Reflection.</li>
+    <li><strong>Seagull Nest dropped.</strong> This was always the stretch 5th asset in the original plan (§5, Table 1: "gives buffer if one proves too ambitious"). With the other 4 assets finished to a high standard well ahead of the deadline, I chose not to add a 5th asset for its own sake — the time was better spent getting audio and Scene Integration done properly instead.</li>
+  </ul>
+  <p>Neither of these were forced by running out of time — both models and all planned audio assets finished with time to spare before the 24 Sep deadline, which is what made room for the Pier's expanded scope in the first place.</p>
 </main>
 
 <footer class="site-footer">
-  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Progressive Folio 2
+  Mahmoud Osman · Student ID 225078724 · SIT253 Content Creation for Interactive Experiences · Final Folio
 </footer>
 </body>
 </html>
