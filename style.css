@@ -357,11 +357,12 @@ pre.tree {
   background: var(--ink);
   border: 1px solid var(--brown-line);
   border-radius: 6px;
-  padding: 1.3rem;
+  padding: 2rem 2.2rem;
+  margin: 1.2rem 0;
   font-family: var(--mono);
   font-size: 0.83rem;
   color: var(--fog);
-  line-height: 1.55;
+  line-height: 1.7;
 }
 
 .status-due { color: var(--amber); font-weight: 600; font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.02em; }
